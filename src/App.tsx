@@ -1,8 +1,16 @@
 import React from 'react'
-import Index from './routes/Index'
+import Route from './routes/Index'
+import Network from './network/Index'
 
 interface AppProps { }
 
-const App = (props: AppProps) => <Index {...props} />
+const App = (props: AppProps) => {
+    return (
+        <>
+            <Network {...props} />
+            <Route {...props} />
+        </>
+    )
+}
 
 export default App
