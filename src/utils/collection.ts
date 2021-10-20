@@ -6,3 +6,16 @@ export type LoginFormTypes = {
 export type InputType = "button" | "checkbox" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week"
 
 export type LoginKeys = "email" | "password"
+
+export type User = {
+    completed: boolean
+    id: number
+    title: string
+    userId: number
+    desc: string
+}
+
+export type UserType = {
+    admin: "admin@123";
+    user: "user"
+}
