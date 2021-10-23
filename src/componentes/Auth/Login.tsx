@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { LoginFormTypes, LoginKeys } from '../../utils/collection';
 import { loginForm } from '../../utils/formData';
+import { loginPreConfigData } from '../../utils/preConfigData';
 import { checkValuesExist, valideteValues } from '../../utils/validator';
 import ErrorMessage from '../UI/ErrorMessage';
 import InputField from '../UI/InputField'
@@ -21,8 +22,7 @@ const Login = (props: LoginProps) => {
         setErrorsValues(errors);
 
         if (isValid) {
-            //Here need to call API
-            alert("shahrukh")
+            validateUser(formData.email, formData.password);
         }
     }
 
@@ -33,6 +33,21 @@ const Login = (props: LoginProps) => {
         const isValid = checkValuesExist(data); //this line retun ture if all values are filled
         setIsDisabled(!isValid);
         setErrorsValues({ ...loginForm })
+    }
+
+    const validateUser = (email: string, pass: string) => {
+        let validUser = null;
+        const listData = [...loginPreConfigData]
+        for (var i = 0; i < listData.length; i++) {
+            if ((email === listData[i].email) && (pass === listData[i].password)) {
+                validUser = listData[i];
+                break;
+            }
+        }
+        if (validUser)
+            console.log(validUser, "validUser");
+        else
+            alert("User not found!")
     }
 
     return (
