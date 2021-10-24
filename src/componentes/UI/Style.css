@@ -148,3 +148,14 @@ input:-webkit-autofill:active {
     cursor: pointer;
     align-self: center;
 }
+.center{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+}
+.add-btn{
+    width: auto;
+}
+.add-todo .card{
+    position: relative;
+}

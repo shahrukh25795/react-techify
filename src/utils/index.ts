@@ -7,3 +7,11 @@ export const getUserName = (id: any) => {
     }
     return userName
 };
+
+export const getUserType = (id: any) => {
+    let userName = "Admin"
+    if (id === "2" || id === "3") {
+        userName = "User"
+    }
+    return userName
+};

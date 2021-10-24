@@ -14,7 +14,7 @@ interface InputFieldProps {
 
 const InputField = (props: InputFieldProps) => {
 
-    const { label, id = "input", type = "text", onChange, value, placeholder, className } = props;
+    const { label, id = "input", type = "text", onChange, value = "", placeholder, className } = props;
 
     return (
         <div className={`input-box ${className}`}>
