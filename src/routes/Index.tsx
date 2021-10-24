@@ -8,7 +8,7 @@ const Index = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" render={(props) => <Login {...props} />} />
-                <Route exact path="/dashboard" render={(props) => <Home {...props} />} />
+                <Route exact path="/dashboard/:id?" render={(props) => <Home {...props} />} />
             </Switch>
         </BrowserRouter>
     )

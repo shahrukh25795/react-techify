@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { getApi, userList } from '../../network/Request';
+import { DataType } from '../../utils/collection';
+import { ramUserPreConfigData, shyamUserPreConfigData } from '../../utils/preConfigData';
 import Header from '../UI/Header'
 import AdminUserList from './AdminUserList';
 
-interface HomeProps {
+const Home = (props: any) => {
 
-}
+    const [allData, setAllData] = useState<Array<DataType>>([]);
 
-const Home = (props: HomeProps) => {
+    const id = props?.match?.params?.id || "1";
 
-    const [allData, setAllData] = useState([])
 
     useEffect(() => {
-        getUserList()
-    }, []);
+        if (id === "1")
+            getUserList();
+    }, [id]);
 
 
     const getUserList = () => {
@@ -26,9 +28,12 @@ const Home = (props: HomeProps) => {
 
     return (
         <div className="user-container">
-            <Header />
+            <Header
+                id={id}
+                {...props}
+            />
             <AdminUserList
-                allData={allData}
+                allData={id === "2" ? [...ramUserPreConfigData] : id === "3" ? [...shyamUserPreConfigData] : allData}
             />
         </div>
     )

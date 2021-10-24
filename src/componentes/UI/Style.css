@@ -129,7 +129,7 @@ input:-webkit-autofill:active {
 }
 .users{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 30px
 }
@@ -142,4 +142,8 @@ input:-webkit-autofill:active {
 }
 .user-list p{
     margin: 5px;
+}
+.row span{
+margin-right: 10px;
+cursor: pointer;
 }

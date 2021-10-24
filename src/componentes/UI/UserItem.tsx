@@ -1,8 +1,8 @@
 import React from 'react'
-import { User } from '../../utils/collection'
+import { DataType } from '../../utils/collection'
 
 interface UserItemProps {
-    item: User
+    item: DataType
 }
 
 const UserItem = ({ item, ...props }: UserItemProps) => {

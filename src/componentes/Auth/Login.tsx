@@ -6,11 +6,9 @@ import { checkValuesExist, valideteValues } from '../../utils/validator';
 import ErrorMessage from '../UI/ErrorMessage';
 import InputField from '../UI/InputField'
 import "../UI/Style.css"
-interface LoginProps {
+import Cookies from 'js-cookie'
 
-}
-
-const Login = (props: LoginProps) => {
+const Login = (props: any) => {
 
     const [formData, setFormData] = useState<LoginFormTypes>({ ...loginForm });//initialize form values
     const [errorsValues, setErrorsValues] = useState<LoginFormTypes>({ ...loginForm });//initialize error values
@@ -44,10 +42,13 @@ const Login = (props: LoginProps) => {
                 break;
             }
         }
-        if (validUser)
-            console.log(validUser, "validUser");
-        else
+        if (validUser) {
+            Cookies.set("user_info", JSON.stringify(validUser));
+            props.history.push(`/dashboard/${validUser.id}`);
+        }
+        else {
             alert("User not found!")
+        }
     }
 
     return (

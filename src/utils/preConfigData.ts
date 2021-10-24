@@ -2,10 +2,11 @@ export const loginPreConfigData: Array<{
     email: string;
     password: string;
     type: string;
+    id: string;
 }> = [
-        { "email": "admin@mail.com", "password": "admin@123", "type": "admin" },
-        { "email": "ram@mail.com", "password": "ram@1234", "type": "user" },
-        { "email": "shyam@mail.com", "password": "shyam@123", "type": "user" },
+        { "id": "1", "email": "admin@mail.com", "password": "admin@123", "type": "admin" },
+        { "id": "2", "email": "ram@mail.com", "password": "ram@1234", "type": "user" },
+        { "id": "3", "email": "shyam@mail.com", "password": "shyam@123", "type": "user" },
     ]
 
 export const ramUserPreConfigData: Array<{

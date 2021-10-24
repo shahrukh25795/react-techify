@@ -19,3 +19,15 @@ export type UserType = {
     admin: "admin@123";
     user: "user"
 }
+
+export type UserInfoType = {
+    email: string;
+    password: string;
+    type: string;
+}
+
+export type DataType = {
+    title: string;
+    desc: string;
+    id: string;
+}

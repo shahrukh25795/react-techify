@@ -1,9 +1,9 @@
 import React from 'react'
-import { User } from '../../utils/collection'
+import { DataType } from '../../utils/collection'
 import UserItem from '../UI/UserItem'
 
 interface AdminUserListProps {
-    allData: Array<User>
+    allData: Array<DataType>
 }
 
 const AdminUserList = ({ allData }: AdminUserListProps) => {
@@ -11,7 +11,7 @@ const AdminUserList = ({ allData }: AdminUserListProps) => {
         <div className="admin-user">
             <h1>User List</h1>
             <div className="users">
-                {allData?.length > 0 && allData.map((item) => <UserItem item={item} />)}
+                {allData?.length > 0 && allData.map((item) => <UserItem key={item?.id} item={item} />)}
             </div>
         </div>
     )
