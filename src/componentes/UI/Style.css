@@ -144,6 +144,7 @@ input:-webkit-autofill:active {
     margin: 5px;
 }
 .row span{
-margin-right: 10px;
-cursor: pointer;
+    margin-right: 10px;
+    cursor: pointer;
+    align-self: center;
 }
